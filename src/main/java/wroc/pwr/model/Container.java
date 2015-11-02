@@ -3,6 +3,8 @@ package wroc.pwr.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -10,9 +12,12 @@ import javax.persistence.Table;
 public class Container {
 	@Id @GeneratedValue
 	private int containerId;
+	@ManyToOne
 	private Cistern cistern;
+	@OneToOne
 	private Order order;
 	private int capacity;
+	@OneToOne
 	private Fuel fuel;
 
 	public Cistern getCistern() {

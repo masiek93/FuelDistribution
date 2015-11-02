@@ -3,6 +3,7 @@ package wroc.pwr.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -14,6 +15,7 @@ public class Client {
 	private String lastName;
 	private String email;
 	private int phoneNumber;
+	@OneToOne
 	private Address address;
 	public String getName() {
 		return name;

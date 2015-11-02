@@ -3,6 +3,7 @@ package wroc.pwr.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -11,6 +12,7 @@ public class GasStation {
 	@Id @GeneratedValue
 	private int gasStationId;
 	private int name;
+	@OneToOne
 	private Address address;
 	
 	public int getName() {

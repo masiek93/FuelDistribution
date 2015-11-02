@@ -83,8 +83,8 @@
 					<url>http://localhost:8090/manager/text</url>
 					<server>tomcatserver</server>
 					<path>/fueldistibution_app</path>
-					<username>admin</username>
-					<password>admin</password>
+					<username>user</username>
+					<password>user</password>
 				</configuration>
 			</plugin>
 		</plugins>

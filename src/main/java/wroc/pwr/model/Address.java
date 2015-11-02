@@ -11,7 +11,7 @@ public class Address {
 	@Id @GeneratedValue
 	private int addressId;
 	private String streetName;
-	private int buildingNumb; /* i assume that the buildingNumb is only number without any letters */
+	private int buildingNumber; /* i assume that the buildingNumber is only number without any letters */
 	private int postalCode;
 	private String city;
 
@@ -23,12 +23,12 @@ public class Address {
 		this.streetName = streetName;
 	}
 
-	public int getBuildingNumb() {
-		return buildingNumb;
+	public int getBuildingNumber() {
+		return buildingNumber;
 	}
 
-	public void setBuildingNumb(int buildingNumb) {
-		this.buildingNumb = buildingNumb;
+	public void setBuildingNumber(int buildingNumber) {
+		this.buildingNumber = buildingNumber;
 	}
 
 	public int getPostalCode() {

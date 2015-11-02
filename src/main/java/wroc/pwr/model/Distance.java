@@ -3,6 +3,7 @@ package wroc.pwr.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -10,21 +11,15 @@ import javax.persistence.Table;
 public class Distance {
 	@Id @GeneratedValue
 	private int distanceId;
-	private GasStation startGasStation;
-	private GasStation finalGasStation;
+	@OneToMany
+	private GasStation gasStation;
 	private int distanceByTime;
 	
-	public GasStation getStartStation() {
-		return startGasStation;
+	public GasStation getGasStation() {
+		return gasStation;
 	}
-	public void setStartStation(GasStation startStation) {
-		this.startGasStation = startStation;
-	}
-	public GasStation getFinalStation() {
-		return finalGasStation;
-	}
-	public void setFinalStation(GasStation finalStation) {
-		this.finalGasStation = finalStation;
+	public void setGasStation(GasStation gasStation) {
+		this.gasStation = gasStation;
 	}
 	public int getDistanceByTime() {
 		return distanceByTime;

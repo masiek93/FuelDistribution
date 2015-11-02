@@ -5,6 +5,8 @@ import java.util.LinkedList;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,8 +14,10 @@ import javax.persistence.Table;
 public class Route {
 	@Id @GeneratedValue
 	private int routeId;
+	@OneToOne
 	private Cistern cistern;
-	private LinkedList<Distance> listOfDistances;
+	@OneToMany
+	private Distance distance;
 	
 	public Cistern getCistern() {
 		return cistern;
@@ -21,10 +25,10 @@ public class Route {
 	public void setCistern(Cistern cistern) {
 		this.cistern = cistern;
 	}
-	public LinkedList<Distance> getListOfDistances() {
-		return listOfDistances;
+	public Distance getDistance() {
+		return distance;
 	}
-	public void setListOfDistances(LinkedList<Distance> listOfDistances) {
-		this.listOfDistances = listOfDistances;
+	public void setDistance(Distance distance) {
+		this.distance = distance;
 	}
 }

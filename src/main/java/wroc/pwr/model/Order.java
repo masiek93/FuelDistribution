@@ -1,8 +1,11 @@
 package wroc.pwr.model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -13,9 +16,24 @@ public class Order {
 	private GasStation gasStation;
 	private Fuel fuel;
 	private int status; // -2 -> ToDO | 0 -> DOING | 5 -> DONE
-	// private DateType date; muszę znaleźć klasę do zapisywania daty
+	private Date date;
+	@ManyToOne
+	private Client client;
+
+	public Client getClient() {
+		return client;
+	}
+	public void setClient(Client client) {
+		this.client = client;
+	}
 	public GasStation getGasStation() {
 		return gasStation;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
 	}
 	public void setGasStation(GasStation gasStation) {
 		this.gasStation = gasStation;
