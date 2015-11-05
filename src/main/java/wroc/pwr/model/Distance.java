@@ -1,5 +1,8 @@
 package wroc.pwr.model;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,14 +15,14 @@ public class Distance {
 	@Id @GeneratedValue
 	private int distanceId;
 	@OneToMany
-	private GasStation gasStation;
+	private Collection<GasStation> gasStationList = new ArrayList<GasStation>();
 	private int distanceByTime;
 	
-	public GasStation getGasStation() {
-		return gasStation;
+	public Collection<GasStation> getGasStationList() {
+		return gasStationList;
 	}
-	public void setGasStation(GasStation gasStation) {
-		this.gasStation = gasStation;
+	public void setGasStationList(Collection<GasStation> gasStationList) {
+		this.gasStationList = gasStationList;
 	}
 	public int getDistanceByTime() {
 		return distanceByTime;

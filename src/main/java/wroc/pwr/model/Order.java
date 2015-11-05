@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -13,7 +14,9 @@ import javax.persistence.Table;
 public class Order {
 	@Id @GeneratedValue
 	private int orderId;
+	@OneToOne
 	private GasStation gasStation;
+	@OneToOne
 	private Fuel fuel;
 	private int status; // -2 -> ToDO | 0 -> DOING | 5 -> DONE
 	private Date date;

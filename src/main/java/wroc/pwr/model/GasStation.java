@@ -7,7 +7,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "GAS_STATION")
+@Table(name = "GAS_STATION") 
 public class GasStation {
 	@Id @GeneratedValue
 	private int gasStationId;

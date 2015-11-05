@@ -1,6 +1,7 @@
 package wroc.pwr.model;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +18,7 @@ public class Route {
 	@OneToOne
 	private Cistern cistern;
 	@OneToMany
-	private Distance distance;
+	private Collection<Distance> distanceList = new ArrayList<Distance>();
 	
 	public Cistern getCistern() {
 		return cistern;
@@ -25,10 +26,11 @@ public class Route {
 	public void setCistern(Cistern cistern) {
 		this.cistern = cistern;
 	}
-	public Distance getDistance() {
-		return distance;
+	public Collection<Distance> getDistanceList() {
+		return distanceList;
 	}
-	public void setDistance(Distance distance) {
-		this.distance = distance;
+	public void setDistanceList(Collection<Distance> distanceList) {
+		this.distanceList = distanceList;
 	}
+
 }
