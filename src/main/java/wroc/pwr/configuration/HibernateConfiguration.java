@@ -53,6 +53,11 @@ public class HibernateConfiguration {
         properties.put("hibernate.hbm2ddl.auto", environment.getRequiredProperty("hibernate.hbm2ddl.auto"));
         return properties;        
     }
+    
+   /* @Bean
+    public SessionFactory sessionFactory() {
+        return sessionFactoryBean().getObject();
+    }*/
      
     @Bean
     @Autowired

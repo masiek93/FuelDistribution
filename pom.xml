@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>wroc.pwr</groupId>
-	<artifactId>FuelDistribution</artifactId>
+	<artifactId>FuelDistributionApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
-	<name>FuelDistribution</name>
+	<name>FuelDistributionApp</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -89,6 +89,7 @@
 		</dependency>
 	</dependencies>
 	<build>
+		<pluginManagement>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
@@ -98,10 +99,22 @@
 					<url>http://localhost:8090/manager/text</url>
 					<server>tomcatserver</server>
 					<path>/fueldistibution_app</path>
-					<username>user</username>
-					<password>user</password>
+					<username>admin</username>
+					<password>admin</password>
 				</configuration>
 			</plugin>
+			<plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>2.4</version>
+                    <configuration>
+                        <warSourceDirectory>src/main/webapp</warSourceDirectory>
+                        <warName>FuelDistributrionApp</warName>
+                        <failOnMissingWebXml>false</failOnMissingWebXml>
+                    </configuration>
+                </plugin>
 		</plugins>
+		</pluginManagement>
+		<finalName>FuelDistributrionApp</finalName>
 	</build>
 </project>

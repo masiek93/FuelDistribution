@@ -1,24 +1,19 @@
 package wroc.pwr.runner;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import wroc.pwr.dao.AddressDaoImpl;
+import wroc.pwr.model.Address;
+
 
 public class Test 
 {
+	//@Autowired
+	//public AddressDaoImpl addresDao;
+	
     public static void main( String[] args )
     {
-		
-
-		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-		
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
-		
-		session.getTransaction().commit();
-		session.close();
-
-		
-		sessionFactory.close();
+    	//Address address = new Address();
+    	//addresDao.addAddress(address);
     }
 }

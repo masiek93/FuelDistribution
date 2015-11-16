@@ -12,7 +12,7 @@ public class Address {
 	private int addressId;
 	private String streetName;
 	private int buildingNumber; /* i assume that the buildingNumber is only number without any letters */
-	private int postalCode;
+	private String postalCode;
 	private String city;
 
 	public String getStreetName() {
@@ -31,11 +31,11 @@ public class Address {
 		this.buildingNumber = buildingNumber;
 	}
 
-	public int getPostalCode() {
+	public String getPostalCode() {
 		return postalCode;
 	}
 
-	public void setPostalCode(int postalCode) {
+	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
 	}
 
