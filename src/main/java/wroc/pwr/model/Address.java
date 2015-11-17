@@ -2,18 +2,27 @@ package wroc.pwr.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "ADDRESS")
 public class Address {
-	@Id @GeneratedValue
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int addressId;
 	private String streetName;
 	private int buildingNumber; /* i assume that the buildingNumber is only number without any letters */
 	private String postalCode;
 	private String city;
+
+	public int getAddressId() {
+		return addressId;
+	}
+
+	public void setAddressId(int addressId) {
+		this.addressId = addressId;
+	}
 
 	public String getStreetName() {
 		return streetName;
