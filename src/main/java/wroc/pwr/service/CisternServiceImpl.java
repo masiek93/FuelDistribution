@@ -15,7 +15,7 @@ public class CisternServiceImpl implements CisternService {
 
 	@Autowired
 	private CisternDao cisternDao;
-
+	
 	public void addCistern(Cistern cistern) {
 		cisternDao.addCistern(cistern);
 	}
@@ -35,5 +35,4 @@ public class CisternServiceImpl implements CisternService {
 	public List<Cistern> getListOfAllCisterns() {
 		return cisternDao.getListOfAllCisterns();
 	}
-
 }

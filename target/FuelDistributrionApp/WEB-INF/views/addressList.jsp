@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>SYSTEM DYSTRYBUCJI PALIW PŁYNNYCH | Dodawanie Adresu</title>
+		<title>SYSTEM DYSTRYBUCJI PALIW PŁYNNYCH | Lista Adresów</title>
 		<style>
 			tr:first-child{
             	font-weight: bold;
@@ -29,7 +29,7 @@
             <td>${address.buildingNumber}</td>
             <td>${address.postalCode}</td>
             <td>${address.city}</td>
-            <td><a href="<c:url value='/delete-${address.addressId}-address' />">Usuń</a></td>
+            <td><a href="<c:url value='/usun-${address.addressId}-adres' />">Usuń</a></td>
             </tr>
         </c:forEach>
     </table>

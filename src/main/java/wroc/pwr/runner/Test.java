@@ -1,9 +1,5 @@
 package wroc.pwr.runner;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-import wroc.pwr.dao.AddressDaoImpl;
-import wroc.pwr.model.Address;
 
 
 public class Test 

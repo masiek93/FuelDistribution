@@ -1,6 +1,5 @@
 package wroc.pwr.controller;
 
-import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -34,7 +33,7 @@ public class AddressController {
 	@RequestMapping(value = "/adres/dodaj")
 	public String newAddress(HttpServletRequest request, @ModelAttribute("addressForm") @Valid AddressForm addressForm, BindingResult result) {
 		if (request.getMethod().equalsIgnoreCase("post") && !result.hasErrors()) {
-
+			/* better to implement a constructor for Address model | do that in a free time */
 			Address address = new Address();
 			address.setStreetName(addressForm.getFormStreetName());
 			address.setBuildingNumber(addressForm.getFormBuildingNumber());
@@ -47,7 +46,7 @@ public class AddressController {
 		return "addAddress";
 	}
 	
-    @RequestMapping(value = { "/delete-{id}-address" }, method = RequestMethod.GET)
+    @RequestMapping(value = { "/usun-{id}-adres" }, method = RequestMethod.GET)
     public String deleteAddress(@PathVariable int id) {
         addressService.removeAddressById(id);
         return "redirect:/adres";

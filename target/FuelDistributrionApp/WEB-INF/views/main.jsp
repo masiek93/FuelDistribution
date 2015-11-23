@@ -11,6 +11,10 @@
 		<br />
 		<br />
 		<center><h2>${message}</h2></center>	
-		<center><h3><a href="adres">Adresy </a><h3><a href="cysterna"> Flota Cystern </a></h3></center>
+		<center>
+			<h3><a href="adres">Adresy </a></h3>
+			<h3><a href="cysterna"> Flota Cystern </a></h3>
+			<h3><a href="zamowienia"> Zamówienia </a></h3>
+			</center>
 	</body>
 </html>
