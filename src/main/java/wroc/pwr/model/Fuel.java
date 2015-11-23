@@ -2,13 +2,14 @@ package wroc.pwr.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "FUEL")
 public class Fuel {
-	@Id @GeneratedValue
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int fuelId;
 	private String type;
 	
@@ -17,5 +18,11 @@ public class Fuel {
 	}
 	public void setType(String type) {
 		this.type = type;
+	}
+	public int getFuelId() {
+		return fuelId;
+	}
+	public void setFuelId(int fuelId) {
+		this.fuelId = fuelId;
 	}
 }

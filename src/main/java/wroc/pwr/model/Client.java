@@ -5,6 +5,7 @@ import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -13,7 +14,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "CLIENT")
 public class Client {
-	@Id @GeneratedValue
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int clientId;
 	private String name;
 	private String lastName;
@@ -26,6 +27,12 @@ public class Client {
 	
 	public Collection<Order> getOrderList() {
 		return orderList;
+	}
+	public int getClientId() {
+		return clientId;
+	}
+	public void setClientId(int clientId) {
+		this.clientId = clientId;
 	}
 	public void setOrderList(Collection<Order> orderList) {
 		this.orderList = orderList;

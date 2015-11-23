@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
@@ -12,7 +13,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "ORDERS")
 public class Order {
-	@Id @GeneratedValue
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int orderId;
 	@OneToOne
 	private GasStation gasStation;
@@ -25,6 +26,12 @@ public class Order {
 
 	public Client getClient() {
 		return client;
+	}
+	public int getOrderId() {
+		return orderId;
+	}
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
 	}
 	public void setClient(Client client) {
 		this.client = client;

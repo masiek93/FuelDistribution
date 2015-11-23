@@ -5,6 +5,7 @@ import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -13,7 +14,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "ROUTE")
 public class Route {
-	@Id @GeneratedValue
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int routeId;
 	@OneToOne
 	private Cistern cistern;
@@ -28,6 +29,12 @@ public class Route {
 	}
 	public Collection<Distance> getDistanceList() {
 		return distanceList;
+	}
+	public int getRouteId() {
+		return routeId;
+	}
+	public void setRouteId(int routeId) {
+		this.routeId = routeId;
 	}
 	public void setDistanceList(Collection<Distance> distanceList) {
 		this.distanceList = distanceList;

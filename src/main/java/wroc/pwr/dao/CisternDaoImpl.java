@@ -36,7 +36,6 @@ public class CisternDaoImpl implements CisternDao{
 		if (null != cistern) {
 			session.delete(cistern);
 		}
-		
 	}
 
 	public Cistern getCisternById(int cisternId) {
